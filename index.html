@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Mehrwertsteuerrechner</title>
+  </head>
+  <body>
+    <header>
+      <article>
+        <div class="heading">
+          <h1>
+            Mehrwertsteuer - <br />
+            Rechner
+          </h1>
+          <div class="buttons">
+            <label for="männlich">
+              Männlich
+              <input
+                type="radio"
+                name="radio"
+                id="männlich"
+                value="männlich"
+                onclick="radioChange()"
+                checked
+              />
+            </label>
+            <div class="small_line"></div>
+            <label for="weiblich">
+              Weiblich
+              <input
+                type="radio"
+                name="radio"
+                id="weiblich"
+                value="weiblich"
+                onclick="radioChange2()"
+              />
+            </label>
+          </div>
+        </div>
+        <div class="calculation">
+          <form action="">
+            <label class="description" for="height">Körpergröße</label>
+            <input type="number" id="height" step="1" required />
+            <label class="description" for="age">Alter</label>
+            <input type="number" id="age" step="1" required />
+            <label class="description" for="weight">Gewicht</label>
+            <input type="number" id="weight" step="0.1" required />
+            <select id="workload">
+              <option value="">Schlafen</option>
+              <option value="">Nur Sitzen oder Liegen</option>
+              <option value="">
+                Ausschließlich sitzende Tätigkeit mit wenig oder keiner
+                körperlichen Aktivität in der Freizeit, z.B. Büroarbeit
+              </option>
+              <option value="">
+                Sitzende Tätigkeit mit zeitweilig gehender oder stehender
+                Tätigkeit z.B. Studierende, Fließbandarbeiter, Laboranten oder
+                Kraftfahrer
+              </option>
+              <option value="">
+                Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer,
+                Kellner, Handwerker, Mechaniker, Hausfrau
+              </option>
+              <option value="">
+                Körperlich anstrengende berufliche Arbeit
+              </option>
+            </select>
+          </form>
+        </div>
+        <div class="underline"></div>
+        <div class="calculation ergebnis_wrapper">
+          <div class="ergebnis_left">
+            <div class="dark_div"></div>
+            <div class="bright_div">
+              <h2>Grundumsatz:</h2>
+              <h2>Gesamtumsatz:</h2>
+            </div>
+          <div class="ergebnis_middle">
+            <div class="dark_div"></div>
+            <div class="bright_div">
+              <h2 class="kcl_grundums"></h2>
+              <h2 class="kcl_gesamtums"></h2>
+            </div>
+          <div class="ergebnis_right">
+            <div class="dark_div"></div>
+            <div class="bright_div">
+              <h2 class="kj_gesamtums"></h2>
+              <h2 class="kj_gesamtums"></h2>
+            </div>
+          </div>
+        </div>
+      </article>
+    </header>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
