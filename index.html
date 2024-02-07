@@ -10,34 +10,31 @@
     <header>
       <article>
         <div class="heading">
-          <h1>
-            Mehrwertsteuer - <br />
-            Rechner
-          </h1>
-          <div class="buttons">
-            <label for="männlich">
+          <h1>Kalorienrechner</h1>
+          <form class="buttons">
+            <label for="männlich" class="label_man">
               Männlich
               <input
                 type="radio"
-                name="radio"
+                name="gender"
                 id="männlich"
                 value="männlich"
-                onclick="radioChange()"
                 checked
+                onclick="manBgColor()"
               />
             </label>
             <div class="small_line"></div>
-            <label for="weiblich">
+            <label for="weiblich" class="label_woman">
               Weiblich
               <input
                 type="radio"
-                name="radio"
+                name="gender"
                 id="weiblich"
                 value="weiblich"
-                onclick="radioChange2()"
+                onclick="womanBgColor()"
               />
             </label>
-          </div>
+          </form>
         </div>
         <div class="calculation">
           <form action="">
@@ -47,26 +44,30 @@
             <input type="number" id="age" step="1" required />
             <label class="description" for="weight">Gewicht</label>
             <input type="number" id="weight" step="0.1" required />
+            <label class="description" for="workload"
+              >Durchschnittliche tägliche yAktivität</label
+            >
             <select id="workload">
-              <option value="">Schlafen</option>
-              <option value="">Nur Sitzen oder Liegen</option>
-              <option value="">
-                Ausschließlich sitzende Tätigkeit mit wenig oder keiner
-                körperlichen Aktivität in der Freizeit, z.B. Büroarbeit
+              <option value="0.95">Schlafen</option>
+              <option value="1.2">Nur Sitzen oder Liegen</option>
+              <option value="1.5">
+                Ausschließlich sitzende Tätigkeit mit wenig <br />oder keiner
+                körperlichen Aktivität in <br />der Freizeit, z.B. Büroarbeit
               </option>
-              <option value="">
-                Sitzende Tätigkeit mit zeitweilig gehender oder stehender
-                Tätigkeit z.B. Studierende, Fließbandarbeiter, Laboranten oder
-                Kraftfahrer
+              <option value="1.7">
+                Sitzende Tätigkeit mit zeitweilig gehender <br />oder stehender
+                Tätigkeit z.B. Studierende, <br />Fließbandarbeiter, Laboranten
+                oder Kraftfahrer
               </option>
-              <option value="">
-                Überwiegend gehende oder stehende Tätigkeit, z.B. Verkäufer,
-                Kellner, Handwerker, Mechaniker, Hausfrau
+              <option value="1.9">
+                Überwiegend gehende oder stehende Tätigkeit, <br />
+                z.B. Verkäufer, Kellner, Handwerker, <br />Mechaniker, Hausfrau
               </option>
-              <option value="">
+              <option value="2.2">
                 Körperlich anstrengende berufliche Arbeit
               </option>
             </select>
+            <input type="button" value="Submit" onclick="calCalculator()" />
           </form>
         </div>
         <div class="underline"></div>
@@ -77,16 +78,22 @@
               <h2>Grundumsatz:</h2>
               <h2>Gesamtumsatz:</h2>
             </div>
+          </div>
           <div class="ergebnis_middle">
-            <div class="dark_div"></div>
+            <div class="dark_div">
+              <h2>kcal</h2>
+            </div>
             <div class="bright_div">
               <h2 class="kcl_grundums"></h2>
               <h2 class="kcl_gesamtums"></h2>
             </div>
+          </div>
           <div class="ergebnis_right">
-            <div class="dark_div"></div>
+            <div class="dark_div">
+              <h2>kj</h2>
+            </div>
             <div class="bright_div">
-              <h2 class="kj_gesamtums"></h2>
+              <h2 class="kj_grundums"></h2>
               <h2 class="kj_gesamtums"></h2>
             </div>
           </div>
